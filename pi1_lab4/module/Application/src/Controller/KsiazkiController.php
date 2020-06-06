@@ -109,8 +109,20 @@ class KsiazkiController extends AbstractActionController
         if (empty($id)) {
             $this->redirect()->toRoute('ksiazki');
         }
-        $daneKsiazki = $this->ksiazka->pobierz($id);
-        $this->ksiazkaForm->setData($daneKsiazki);
+
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $this->ksiazkaForm->setData($request->getPost());
+
+            if ($this->ksiazkaForm->isValid()) {
+                $this->ksiazka->aktualizuj($id, $request->getPost());
+
+                return $this->redirect()->toRoute('ksiazki');
+            }
+        } else {
+            $daneKsiazki = $this->ksiazka->pobierz($id);
+            $this->ksiazkaForm->setData($daneKsiazki);
+        }
 
         $viewModel = new ViewModel(['tytul' => 'Szczegóły książki', 'form' => $this->ksiazkaForm]);
         $viewModel->setTemplate('application/ksiazki/szczegoly');

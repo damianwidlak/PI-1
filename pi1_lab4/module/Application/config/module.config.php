@@ -57,7 +57,6 @@ return [
                     ],
                 ],
             ],
-			// Dodanie autorów
 			'autorzy' => [
                 'type' => Segment::class,
                 'options' => [
@@ -70,7 +69,6 @@ return [
             ],
         ],
     ],
-	// Dodanie kontrolera AutorzyController
     'controllers' => [
         'factories' => [
             IndexController::class => InvokableFactory::class,
@@ -78,7 +76,6 @@ return [
 			AutorzyController::class => AutorzyControllerFactory::class,
         ],
     ],
-	// Dodanie AutorForm do service managera
     'service_manager' => [
         'factories' => [
             Ksiazka::class => InvokableFactory::class,

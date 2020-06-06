@@ -2,7 +2,7 @@
 
 namespace Application\Controller;
 
-use Application\Form\AutorForm;
+use Application\Form\autorForm;
 use Application\Model\Autor;
 use Laminas\Mvc\Controller\AbstractActionController;
 use Laminas\View\Model\ViewModel;
@@ -19,7 +19,7 @@ class AutorzyController extends AbstractActionController
      */
     private $autorForm;
 
-    public function __construct(Autor $autor, AutorForm $autorForm)
+    public function __construct(Autor $autor, autorForm $autorForm)
     {
         $this->autor = $autor;
         $this->autorForm = $autorForm;
