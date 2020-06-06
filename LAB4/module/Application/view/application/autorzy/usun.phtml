@@ -1,0 +1,15 @@
+<h1><?= $tytul ?></h1>
+<?php $url=$this->url('autorzy', ['action'=>'usun','id'=>$autor->id]);?>
+<p>
+    Czy usunąć autora:
+    <?= $this->escapeHtml($autor->imie)?>
+    <?= $this->escapeHtml($autor->nazwisko)?>?
+</p>
+ 
+<form action="<?= $url ?>" method="post">
+<div class ="form-group">
+    <input type="hidden" name="id" value="<?= (int) $autor->id ?>"/>
+    <input type="submit" class="btn btn-danger" name="del" value="Usuń"/>
+    <input type="submit" class="btn btn-success" name="del" value="Nie"/>
+</div>
+</form>

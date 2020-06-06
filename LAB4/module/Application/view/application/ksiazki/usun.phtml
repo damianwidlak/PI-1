@@ -1,0 +1,15 @@
+<h1><?= $tytul ?></h1>
+<?php $url=$this->url('ksiazki', ['action'=>'usun','id'=>$ksiazka->id]);?>
+<p>
+    Czy napewno usunac:
+    "<?= $this->escapeHtml($ksiazka->tytul)?>" autora:
+    "<?= $this->escapeHtml($ksiazka->imie)?>" "<?= $this->escapeHtml($ksiazka->nazwisko)?>"
+</p>
+ 
+<form action="<?= $url ?>" method="post">
+<div class ="form-group">
+    <input type="hidden" name="id" value="<?= (int) $ksiazka->id ?>"/>
+    <input type="submit" class="btn btn-danger" name="del" value="Usun"/>
+    <input type="submit" class="btn btn-success" name="del" value="Nie"/>
+</div>
+</form>

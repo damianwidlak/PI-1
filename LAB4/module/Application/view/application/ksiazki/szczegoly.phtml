@@ -1,0 +1,30 @@
+<h1><?= $tytul ?></h1>
+
+
+<div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label"><?= $this->formLabel($form->get('tytul')) ?></label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail"<?= $this->formText($form->get('tytul')) ?>
+    </div>
+
+   <label for="Autor" class="col-sm-2 col-form-label"><?= $this->formLabel($form->get('id_autora')) ?></label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="Autor"<?= $this->formText($form->get('id_autora')) ?>
+    </div>
+
+   <label for="Cena" class="col-sm-2 col-form-label"><?= $this->formLabel($form->get('cena')) ?></label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="Cena"<?= $this->formText($form->get('cena')) ?>
+    </div>
+
+   <label for="Strony" class="col-sm-2 col-form-label"><?= $this->formLabel($form->get('liczba_stron')) ?></label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="Strony"<?= $this->formText($form->get('liczba_stron')) ?>
+    </div>
+
+   <label for="Opis" class="col-sm-2 col-form-label"><?= $this->formLabel($form->get('opis')) ?></label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="Opis"<?= $this->formTextarea($form->get('opis')) ?>
+    </div>
+
+</div>
